@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 :root{
     --primary-color: #6A2975;
     --secondary-color: white;
@@ -15,6 +17,7 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     background-color: var(--secondary-color);
+    font-family: 'Manrope', sans-serif;
 }
 
 /* Header and Navigation Styles */
@@ -122,12 +125,23 @@ body {
     border: none;
     font-size: 24px;
     cursor: pointer;
-    color: var(--text-color);
-    padding: 5px;
+    padding: 0;
 }
 
-.mobile-menu-toggle.active {
-    color: var(--primary-color);
+.mobile-menu-toggle .close-icon {
+    display: none;
+}
+
+.mobile-menu-toggle .hamburger-icon {
+    display: block;
+}
+
+.mobile-menu-toggle.active .close-icon {
+    display: block;
+}
+
+.mobile-menu-toggle.active .hamburger-icon {
+    display: none;
 }
 
 .mobile-nav {
@@ -350,7 +364,7 @@ body {
     }
     
     .form-heading {
-        padding: 30px 0px;
+        padding: 10px 0px;
         font-size: 30px;
     }
     
@@ -393,7 +407,7 @@ body {
 }
 
 .form-heading {
-    padding: 40px 0px;
+    padding: 10px 0px;
     font-size: 40px;
     font-weight: 400;
     color: var(--text-color);
@@ -551,6 +565,15 @@ input:hover {
     padding-left: 0;
 }
 
+
+
+.about-us-advice img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1rem 0;
+}
+
 .footer {
     background-color: #181D27;
     padding: 64px 5%;
@@ -684,7 +707,7 @@ input:hover {
 .hero-section {
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                      url('https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+                      url('assests/Images/herobackground.png');
     background-position: center;
     background-size: cover;
     background-position: center;
@@ -975,6 +998,14 @@ input:hover {
     background-color: var(--hover-color);
 }
 
+.about-us-advice{
+    padding-left: 10%;
+}
+
+.video-thumb{
+    width: 100%;
+}
+
 /* Responsive styles for the form */
 @media (max-width: 992px) {
     .form-container {
@@ -1035,6 +1066,47 @@ input:hover {
     }
 }
 
+@media (max-width: 768px) {
+    .about-us-advice {
+        padding: 1rem 5%;
+    }
+    
+    .about-us-advice img {
+        width: 100%;
+        margin: 1.5rem auto;
+    }
+    
+    .about-us-advice-heading {
+        font-size: 24px;
+        line-height: 1.3;
+        text-align: center;
+    }
+    
+    .about-us-detail-content {
+        font-size: 16px;
+        line-height: 1.5;
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us-advice {
+        padding: 1rem 3%;
+    }
+    
+    .about-us-advice img {
+        margin: 1rem auto;
+    }
+    
+    .about-us-advice-heading {
+        font-size: 20px;
+    }
+    
+    .about-us-detail-content {
+        font-size: 14px;
+    }
+}
+
 /* Responsive Styles for Hero Section */
 @media (max-width: 992px) {
     .hero-container {
@@ -1063,6 +1135,18 @@ input:hover {
         max-width: 100%;
         height: auto;
         object-fit: contain;
+    }
+}
+.form-center-hidden{
+    display: none;
+}
+
+@media (max-width: 990px) {
+    .form-right{
+        display: none;
+    }
+    .form-center-hidden{
+        display: block;
     }
 }
 
@@ -1104,6 +1188,7 @@ input:hover {
         font-size: 16px;
         padding: 10px 20px;
     }
+
 }
 
 @media (max-width: 480px) {
@@ -1135,5 +1220,196 @@ input:hover {
         max-width: 100%;
         height: auto;
         object-fit: contain;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        width: 100%;
+        margin-bottom: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column ul {
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+    }
+
+    .form-left {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* Move price display above the compare section */
+    .form-right {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    /* The checkbox group will come after */
+    .checkbox-group {
+        order: 2;
+    }
+
+    /* Provider details come last */
+    .provider-details {
+        order: 3;
+    }
+}
+
+/* About Us Section Responsive Styles */
+.about-us {
+    padding: 40px 5%;
+    background-color: #fff;
+}
+
+.about-us-heading {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.about-us-business-owner-info,
+.about-us-legal-advice-info {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.about-us-business-owner-contect,
+.about-us-legal-advice-contect {
+    flex: 1;
+}
+
+.about-us-heading-text {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin: 15px 0;
+}
+
+.about-us-detail-content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.about-us-business-owner-info img,
+.about-us-legal-advice-info img {
+    max-width: 45%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 992px) {
+    .about-us-heading {
+        font-size: 28px;
+    }
+
+    .about-us-heading-text {
+        font-size: 22px;
+    }
+
+    .about-us-business-owner-info img,
+    .about-us-legal-advice-info img {
+        max-width: 40%;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-us {
+        padding: 30px 4%;
+    }
+
+    .about-us-heading {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .about-us-business-owner-info,
+    .about-us-legal-advice-info {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+
+    .about-us-legal-advice-info {
+        flex-direction: column-reverse;
+    }
+
+    .about-us-business-owner-info img,
+    .about-us-legal-advice-info img {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .about-us-heading-text {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .about-us-detail-content {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    .about-us-business-owner-contect > div,
+    .about-us-legal-advice-contect > div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-us-business-owner-contect > div img,
+    .about-us-legal-advice-contect > div img {
+        width: 40px;
+        height: 40px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-us {
+        padding: 25px 3%;
+    }
+
+    .about-us-heading {
+        font-size: 22px;
+        margin-bottom: 25px;
+    }
+
+    .about-us-business-owner-info img,
+    .about-us-legal-advice-info img {
+        max-width: 100%;
+    }
+
+    .about-us-heading-text {
+        font-size: 18px;
+    }
+
+    .about-us-detail-content {
+        font-size: 14px;
     }
 }
