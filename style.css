@@ -235,6 +235,17 @@ body {
         width: 100%;
         text-align: center;
     }
+
+    .about-us-legal-advice-info {
+        flex-wrap: wrap-reverse;
+    }
+    .about-us-business-owner-info {
+        flex-wrap: wrap;
+    }
+
+    .about-us-image {
+        width: 100%;
+    }
 }
 
 @media (max-width: 768px) {
@@ -286,6 +297,26 @@ body {
     .phone-number {
         padding: 0.8rem 3rem;
         font-size: 18px;
+    }
+
+    .about-us-legal-advice-info {
+        flex-wrap: wrap-reverse;
+    }
+
+    .about-us-business-owner-info {
+        flex-wrap: wrap;
+    }
+
+    .about-us-image {
+        width: 100%;
+    }
+
+    .about-us-legal-advice-contect {
+        width: 100%;
+    }
+    
+    .about-us-legal-advice-image {
+        width: 100%;
     }
 }
 
@@ -490,6 +521,21 @@ input:hover {
     justify-content: end;
     gap: 40px;
     padding-left: 0;
+    width: 100%;
+}
+
+.about-us-legal-advice-contect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    width: 70%;
+}
+
+.about-us-legal-advice-image {
+    background-image: url("assests/Images/Group 1000001837.png");
+    width: 30%;
+    object-fit: fill;
 }
 
 .about-us-advice-heading {
@@ -503,7 +549,6 @@ input:hover {
     flex-direction: column;
     gap: 56px;
     padding-left: 0;
-
 }
 
 .footer {
