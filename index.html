@@ -4,123 +4,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AbsorbHR</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <header class="header">
-        <nav class="nav-container">
-            <img src="assests/All icons/Group 1991422247.png" alt="logo">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="/">
+                    <img src="assests/All icons/Group 1991422247.png" alt="AbsorbHR logo">
+                </a>
+            </div>
 
-            <div>
-                <ul class="nav-menu" id="navMenu">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+                    <li class="nav-item dropdown">
                         <a href="#" class="nav-link">
                             Our Services
                             <span class="dropdown-arrow">▼</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">News</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">Contacts</a>
-                    </li>
-                    <li class="nav-item">
+                    <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">News</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
+                    <li class="nav-item dropdown">
                         <a href="#" class="nav-link">
                             About Us
                             <span class="dropdown-arrow">▼</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-button">Get Quote</a>
-                    </li>
                 </ul>
-            </div>
+            </nav>
 
-            <button class="mobile-menu-toggle" id="mobileToggle">☰</button>
-        </nav>
+            <div class="nav-right">
+                <a href="#" class="cta-button">Get Quote</a>
+                <button class="mobile-menu-toggle" id="mobileToggle" aria-label="Toggle menu">
+                    <span class="hamburger-icon">☰</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="mobile-nav" id="mobileNav">
+            <ul class="mobile-nav-menu">
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link active">Home</a></li>
+                <li class="mobile-nav-item dropdown">
+                    <a href="#" class="mobile-nav-link">Our Services</a>
+                </li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Resources</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">News</a></li>
+                <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Contacts</a></li>
+                <li class="mobile-nav-item dropdown">
+                    <a href="#" class="mobile-nav-link">About Us</a>
+                </li>
+                <li class="mobile-nav-item mobile-cta-container">
+                    <a href="#" class="mobile-cta-button">Get Quote</a>
+                </li>
+            </ul>
+        </div>
     </header>
 
-    <section class="header-section header-container">
-        
-            <div class="header-content">
-                <h3 class="header-title">Premium HR, without the premium price</h3>
-                <div class="phone-number">
-                    0161 817 8034
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Premium HR, without the premium price</h1>
+                <div class="phone-button">
+                    <a href="tel:01618178034" class="phone-number">0161 817 8034</a>
                 </div>
             </div>
-
-            <div class="header-image">
+            <div class="hero-image">
                 <img src="assests/Images/smiley-businesswoman-posing-outdoors-with-arms-crossed-copy-space 1.png"
-                    alt="Professional HR Consultant" class="professional-image" />
+                    alt="Professional HR Consultant" />
             </div>
-        
+        </div>
+        <div class="support-costs-banner">
+            <p>See Our Support Costs</p>
+        </div>
     </section>
 
     <section class="form-section">
-        <p class="form-heading">See Our Support Costs</p>
-        <form action="" class="form">
-            <div class="form-basic-details">
-                <p class="form-info-text">HR Services</p>
-                <p class="form-info-text">No. of Employees</p>
+        <h2 class="form-heading">See Our Support Costs</h2>
+        <div class="form-container">
+            <div class="form-left">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>HR services</label>
+                    </div>
+                    <div class="form-group">
+                        <label>No. of Employees</label>
+                        <div class="slider-container">
+                            <div class="slider-track">
+                                <div class="slider-fill"></div>
+                            </div>
+                            <div class="slider-thumb"></div>
+                            <span class="slider-value">200+</span>
+                        </div>
+                    </div>
+                </div>
 
-                <div class="basic-info">
-                    <div class="form-entry-1">
-                        <label for="name" class="form-info-text">Name*</label><br/><br/>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="name">Name*</label>
                         <input type="text" id="name" name="name" placeholder="Enter name">
                     </div>
-                    <div class="form-entry-2">
-                        <label for="email" class="form-info-text">Email*</label><br/><br/>
+                    <div class="form-group half">
+                        <label for="email">Email*</label>
                         <input type="email" id="email" name="email" placeholder="Enter email ID">
                     </div>
-                    <div class="form-entry-3">
-                        <label for="mobile-numbe" class="form-info-text">Phone number*</label><br/><br/>
-                        <input type="number" id="mobile-number" name="mobile-number" maxlength="13" placeholder="Enter phone number">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="mobile-number">Phone number*</label>
+                        <input type="tel" id="mobile-number" name="mobile-number" placeholder="Enter phone number">
                     </div>
-                    <div class="form-entry-4">
-                        <label for="website" class="form-info-text">Website*</label><br/><br/>
+                    <div class="form-group half">
+                        <label for="website">Website*</label>
                         <input type="text" id="website" name="website" placeholder="Enter website">
                     </div>
                 </div>
 
-                <div class="form-checkbox">
-                    <input type="checkbox" id="isCompare" name="isCompare" value="true">
-                    <label for="isCompare">Compare with current provider</label>
+                <div class="form-row">
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="isCompare" name="isCompare" value="true">
+                        <label for="isCompare">Compare with current provider</label>
+                    </div>
                 </div>
 
-                <div class="extra-info">
-                    <div class="form-entry-1">
-                        <label for="contarctLength" class="form-info-text">Contract Length*</label><br/><br/>
-                        <input type="text" id="contarctLength" name="contarctLength" placeholder="Contract Length">
+                <div class="form-row provider-details">
+                    <div class="form-group half">
+                        <label for="contractLength">Contract Length</label>
+                        <input type="text" id="contractLength" name="contractLength" placeholder="Contract length">
                     </div>
-                    <div class="form-entry-2">
-                        <label for="contractEndDate" class="form-info-text">Contract End Date*</label><br/><br/>
-                        <input type="date" id="contractEndDate" name="email" placeholder="Date">
+                    <div class="form-group half">
+                        <label for="contractEndDate">Contract End Date</label>
+                        <input type="date" id="contractEndDate" name="contractEndDate" placeholder="Date">
                     </div>
-                    <div class="form-entry-3">
-                        <label for="pricePerMonth" class="form-info-text">Price per Month*</label><br/><br/>
-                        <input type="number" id="pricePerMonth" name="pricePerMonth" maxlength="13" placeholder="£">
+                </div>
+
+                <div class="form-row provider-details">
+                    <div class="form-group half">
+                        <label for="pricePerMonth">Price per Month</label>
+                        <div class="price-input">
+                            <span class="currency">£</span>
+                            <input type="text" id="pricePerMonth" name="pricePerMonth" placeholder="">
+                        </div>
                     </div>
-                    <div class="form-entry-4">
-                        <label for="curretnProviderName" class="form-info-text">Current Provider Name (optional)*</label><br/><br/>
-                        <input type="text" id="curretnProviderName" name="curretnProviderName" placeholder="Enter website">
+                    <div class="form-group half">
+                        <label for="currentProviderName">Current Provider Name (optional)</label>
+                        <input type="text" id="currentProviderName" name="currentProviderName" placeholder="Enter website">
                     </div>
                 </div>
             </div>
-            <div class="form-second-section">
-                <h1 class="form-second-section-heading">GBP £2700/month</h1>
-                <p class="form-info-text">Anything over 200 will need to be Price Upon Enquiry</h5>
-            </div>
-        </form>
-        <div class="temp">
 
+            <div class="form-right">
+                <div class="price-display">
+                    <h3>GBP £2700<span>/month</span></h3>
+                    <p>Anything over 200 will need to be Price Upon Enquiry</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="submit-button">Get Quote</button>
         </div>
     </section>
 
@@ -202,19 +249,16 @@
       
             <div class="social-icons">
               <a href="#" aria-label="Facebook">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/c147ca7189765750401e5bd2e177ca55d95b1fa8?placeholderIfAbsent=true" alt="Facebook" />
+                <img src="assests/All icons/mage_facebook.png" alt="Facebook" />
               </a>
               <a href="#" aria-label="Twitter">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/9d7ef4617c353722529aefdba8b0e208fb688734?placeholderIfAbsent=true" alt="Twitter" />
+                <img src="assests/All icons/prime_twitter.png" alt="Twitter" />
               </a>
               <a href="#" aria-label="LinkedIn">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/fb9dc7f03c20798aa692b7ce675bbee0e9caa27c?placeholderIfAbsent=true" alt="LinkedIn" />
-              </a>
-              <a href="#" aria-label="Instagram">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/f44cf01074d55e6b2eb0cb353a883a170bc3a17f?placeholderIfAbsent=true" alt="Instagram" />
+                <img src="assests/All icons/uil_linkedin.png" alt="LinkedIn" />
               </a>
               <a href="#" aria-label="YouTube">
-                <img src="https://api.builder.io/api/v1/image/assets/TEMP/ef68a4a45b547e335a59412bbc11e697f6cfaffd?placeholderIfAbsent=true" alt="YouTube" />
+                <img src="assests/All icons/fe_youtube.png" alt="YouTube" />
               </a>
             </div>
       
@@ -225,26 +269,33 @@
       
 
     <script>
-        const mobileToggle = document.getElementById('mobileToggle');
-        const navMenu = document.getElementById('navMenu');
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileToggle = document.getElementById('mobileToggle');
+            const mobileNav = document.getElementById('mobileNav');
 
-        mobileToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
+            mobileToggle.addEventListener('click', function(e) {
+                e.stopPropagation();
+                mobileNav.classList.toggle('active');
+                mobileToggle.classList.toggle('active');
+            });
 
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.nav-container')) {
-                navMenu.classList.remove('active');
-            }
-        });
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.nav-container') && !e.target.closest('.mobile-nav')) {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            });
 
-        window.addEventListener('resize', () => {
-            if (window.innerWidth > 768) {
-                navMenu.classList.remove('active');
-            }
+            // Close mobile menu on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 992) {
+                    mobileNav.classList.remove('active');
+                    mobileToggle.classList.remove('active');
+                }
+            });
         });
     </script>
 </body>
-<link rel="stylesheet" href="style.css">
 
 </html>
