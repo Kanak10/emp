@@ -210,6 +210,10 @@ body {
     background-color: var(--hover-color);
 }
 
+.about-us{
+    margin-top: -150px;
+}
+
 /* Responsive styles for navigation */
 @media (max-width: 992px) {
     .desktop-nav {
@@ -326,7 +330,9 @@ body {
     }
 
     .about-us-legal-advice-contect {
-        width: 100%;
+        width: 100% !important;
+        padding: 0;
+        margin: 0;
     }
     
     .about-us-legal-advice-image {
@@ -502,7 +508,7 @@ input:hover {
 .about-us-heading {
     font-size: 32px;
     color: var(--text-color);
-    padding-left: 0;
+    text-align: left;
 }
 
 .about-us-business-owner-info {
@@ -534,7 +540,6 @@ input:hover {
     flex-direction: row;
     justify-content: end;
     gap: 40px;
-    padding-left: 0;
     width: 100%;
 }
 
@@ -562,7 +567,6 @@ input:hover {
     display: flex;
     flex-direction: column;
     gap: 56px;
-    padding-left: 0;
 }
 
 
@@ -802,7 +806,7 @@ input:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: -2%;
     margin-bottom: 30px;
-    border-radius: 8px;
+
     z-index: 10;
 }
 
@@ -902,6 +906,7 @@ input:hover {
     height: 6px;
     background-color: #eee;
     border-radius: 3px;
+    cursor: pointer;
 }
 
 .slider-fill {
@@ -924,6 +929,17 @@ input:hover {
     background-color: var(--primary-color);
     border-radius: 50%;
     cursor: pointer;
+    transition: transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--secondary-color);
+}
+
+.slider-thumb:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.slider-thumb:active {
+    transform: translate(-50%, -50%) scale(0.95);
 }
 
 .slider-value {
@@ -999,7 +1015,7 @@ input:hover {
 }
 
 .about-us-advice{
-    padding-left: 10%;
+    padding: 0 5%;
 }
 
 .video-thumb{
@@ -1068,18 +1084,18 @@ input:hover {
 
 @media (max-width: 768px) {
     .about-us-advice {
-        padding: 1rem 5%;
+        padding: 0 4%;
     }
     
     .about-us-advice img {
         width: 100%;
-        margin: 1.5rem auto;
+        margin: 1.5rem 0;
     }
     
     .about-us-advice-heading {
         font-size: 24px;
         line-height: 1.3;
-        text-align: center;
+        text-align: left;
     }
     
     .about-us-detail-content {
@@ -1091,11 +1107,11 @@ input:hover {
 
 @media (max-width: 480px) {
     .about-us-advice {
-        padding: 1rem 3%;
+        padding: 0 3%;
     }
     
     .about-us-advice img {
-        margin: 1rem auto;
+        margin: 1rem 0;
     }
     
     .about-us-advice-heading {
@@ -1284,7 +1300,7 @@ input:hover {
     font-size: 32px;
     font-weight: 700;
     color: var(--text-color);
-    text-align: center;
+    text-align: left;
     margin-bottom: 40px;
 }
 
@@ -1334,7 +1350,7 @@ input:hover {
 
     .about-us-business-owner-info img,
     .about-us-legal-advice-info img {
-        max-width: 40%;
+        max-width: 50%;
     }
 }
 
@@ -1343,9 +1359,18 @@ input:hover {
         padding: 30px 4%;
     }
 
+    .about-us-business-owner-contect > div img{
+        align-items:start;
+    }
+
     .about-us-heading {
         font-size: 24px;
         margin-bottom: 30px;
+    }
+
+    .about-us-legal-advice-info{
+        width: 100% !important;
+        padding: 0;
     }
 
     .about-us-business-owner-info,
@@ -1361,17 +1386,18 @@ input:hover {
 
     .about-us-business-owner-info img,
     .about-us-legal-advice-info img {
-        max-width: 80%;
-        margin: 0 auto;
+        max-width: 100%;
+        margin: 0;
+        width: 100% !important;
     }
 
     .about-us-heading-text {
         font-size: 20px;
-        text-align: center;
+        text-align: left;
     }
 
     .about-us-detail-content {
-        text-align: center;
+        text-align: left;
         font-size: 15px;
     }
 
@@ -1379,7 +1405,7 @@ input:hover {
     .about-us-legal-advice-contect > div {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .about-us-business-owner-contect > div img,
