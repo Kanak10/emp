@@ -10,3 +10,45 @@
 .hero-content h1{
   margin : 2% 0 5% 0;
 }
+
+.our_service_details{
+    display: flex;
+    justify-content: space-between;
+    padding: 2.5% 5%;
+    align-items: center;
+}
+.our_service_details_container1{
+  width: 50%;
+}
+
+.our_service_details_container2{
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.our_service_details_container2 img{
+  width: 75%;
+}
+
+@media screen and (max-width: 768px) {
+    .our_service_details {
+        flex-direction: column;
+        padding: 0 3%;
+        gap: 3%;
+    }
+
+    .our_service_details_container1 {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .our_service_details_container2 {
+        width: 100%;
+        margin: 20px 0;
+    }
+    .our_service_details_container2 img{
+        width: 100%;
+    }
+}
