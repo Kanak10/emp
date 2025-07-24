@@ -19,3 +19,29 @@ body {
     background-color: var(--secondary-color);
     font-family: 'Manrope', sans-serif;
 }
+
+h1{
+    font-size: 3rem;
+}
+
+h3{
+    font-size:2rem;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+button{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 2% 5%;
+    cursor: pointer;
+    border: 1px solid var(--secondary-color);
+    transition: background-color 0.3s ease;
+    font-size: 1rem;
+}
+button:hover {
+    background-color: var(--hover-color);
+}
