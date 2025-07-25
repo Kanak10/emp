@@ -13,18 +13,16 @@
         <div class="nav-container">
             <div class="logo">
                 <a href="/">
-                    <img src="assests/All icons/Group 1991422247.png" alt="AbsorbHR logo">
+                    <img src="../assests/All icons/Group 1991422247.png" alt="AbsorbHR logo">
                 </a>
             </div>
 
             <nav class="desktop-nav">
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                    <li class="mobile-nav-item dropdown">
-                        <a href="#" class="mobile-nav-link toggle-dropdown">
-                            Our Services <span class="dropdown-arrow">▼</span>
-                        </a>
-                        <ul class="mobile-submenu">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Our Services<span class="dropdown-arrow">▼</span></a>
+                        <ul class="dropdown-menu">
                             <li><a href="#" class="dropdown-item">HR Employment Advice Line and Indemnity</a></li>
                             <li><a href="#" class="dropdown-item">Health and Safety Consultancy</a></li>
                             <li><a href="#" class="dropdown-item">HR Documentation and Training</a></li>
@@ -32,6 +30,7 @@
                             <li><a href="#" class="dropdown-item">Legal Representation</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">News</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">Contacts</a></li>
@@ -58,7 +57,15 @@
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link active">Home</a></li>
                 <li class="mobile-nav-item dropdown">
                     <a href="#" class="mobile-nav-link">Our Services</a>
-                </li>
+                    <ul class="mobile-dropdown-menu">
+                      <li><a href="#" class="dropdown-item">HR Employment Advice Line and Indemnity</a></li>
+                      <li><a href="#" class="dropdown-item">Health and Safety Consultancy</a></li>
+                      <li><a href="#" class="dropdown-item">HR Documentation and Training</a></li>
+                      <li><a href="#" class="dropdown-item">HR Software</a></li>
+                      <li><a href="#" class="dropdown-item">Legal Representation</a></li>
+                    </ul>
+                  </li>
+                  
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Resources</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">News</a></li>
                 <li class="mobile-nav-item"><a href="#" class="mobile-nav-link">Contacts</a></li>
@@ -439,6 +446,16 @@ dropdownToggles.forEach(toggle => {
         parentItem.classList.toggle('open');
     });
 });
+
+// Toggle mobile dropdowns
+document.querySelectorAll('.mobile-nav-item.dropdown > .mobile-nav-link').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const parent = this.parentElement;
+      parent.classList.toggle('active');
+    });
+  });
+  
 
     </script>
 </body>
