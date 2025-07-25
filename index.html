@@ -20,11 +20,17 @@
             <nav class="desktop-nav">
                 <ul class="nav-menu">
                     <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link">
-                            Our Services
-                            <span class="dropdown-arrow">▼</span>
+                    <li class="mobile-nav-item dropdown">
+                        <a href="#" class="mobile-nav-link toggle-dropdown">
+                            Our Services <span class="dropdown-arrow">▼</span>
                         </a>
+                        <ul class="mobile-submenu">
+                            <li><a href="#" class="dropdown-item">HR Employment Advice Line and Indemnity</a></li>
+                            <li><a href="#" class="dropdown-item">Health and Safety Consultancy</a></li>
+                            <li><a href="#" class="dropdown-item">HR Documentation and Training</a></li>
+                            <li><a href="#" class="dropdown-item">HR Software</a></li>
+                            <li><a href="#" class="dropdown-item">Legal Representation</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item"><a href="#" class="nav-link">Resources</a></li>
                     <li class="nav-item"><a href="#" class="nav-link">News</a></li>
@@ -422,6 +428,18 @@
             // Initialize slider at 200 employees (around 90% position)
             updateSlider(90);
         });
+
+        // Toggle mobile dropdowns
+const dropdownToggles = document.querySelectorAll('.mobile-nav-item.dropdown .toggle-dropdown');
+
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const parentItem = this.closest('.mobile-nav-item.dropdown');
+        parentItem.classList.toggle('open');
+    });
+});
+
     </script>
 </body>
 

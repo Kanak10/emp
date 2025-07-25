@@ -116,3 +116,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Initialize slider at 200 employees (around 90% position)
     updateSlider(90);
 });
+
+
+
+// Toggle mobile dropdowns
+const dropdownToggles = document.querySelectorAll('.mobile-nav-item.dropdown .toggle-dropdown');
+
+dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        const parentItem = this.closest('.mobile-nav-item.dropdown');
+        parentItem.classList.toggle('open');
+    });
+});
