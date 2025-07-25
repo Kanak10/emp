@@ -1,0 +1,134 @@
+.hero-section {
+    padding: 20px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero-section h3,
+.hero-section p {
+    color: var(--text-secondary-color);
+}
+
+.hero-section-subtitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-section-subtitle a {
+    text-decoration: none;
+    align-items: center;
+}
+
+.hero-section-subtitle a:hover {
+    color: var(--hover-color);
+}
+
+.hero-section-image-outer-container {
+    position: relative;
+    width: 100%;
+}
+
+.hero-section-bg-image {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.hero-section-image-container {
+    z-index: 10;
+    width: 100%;
+    display: grid;
+    grid-row: inherit;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    align-items: center;
+}
+
+.hero-section-image-container img {
+    width: 100%;
+}
+
+.hero-section-cta-button {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: 20px 6%;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.video-testimonial {
+    padding: 20px 5%;
+}
+
+.video-testimonial-detail-div {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 32px;
+    margin-top: 40px;
+}
+
+.video-testimonial-image-div {
+    position: relative;
+    display: block; 
+    /* width: 40%; */
+}
+
+.video-testimonial-image-bg {
+    position: absolute;
+    width: 40%;
+    bottom: 0;
+    right: 0;
+    left: 20%;
+    top: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.video-testimonial-image {
+    position: relative;
+    width: 50%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.video-testimonial-sub-details h4,
+.video-testimonial-sub-details p { 
+    margin-top: 16px;
+}
+
+.video-testimonial-sub-details p {
+    color: var(--text-secondary-color);
+}
+
+.more-testimonal {
+    
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 768px) {
+
+}
+
+@media (max-width: 480px) {
+
+}

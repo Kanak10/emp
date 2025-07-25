@@ -6,6 +6,8 @@
     --text-color: #1C1C1E;
     --hover-color: #8B5CF6;
     --border-color: rgb(201, 198, 198);
+    --bacground-box-color: #FCEBFF;
+    --text-secondary-color: #4C4C6D;
 }
 
 * {
