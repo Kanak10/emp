@@ -1439,3 +1439,48 @@ input:hover {
         font-size: 14px;
     }
 }
+
+/* Desktop dropdown menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--secondary-color);
+    list-style: none;
+    padding: 10px 0;
+    display: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 220px;
+  }
+  
+  .dropdown-item {
+    padding: 10px 20px;
+    display: block;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .dropdown-item:hover {
+    background-color: var(--hover-color);
+    color: #fff;
+  }
+  
+  /* Show dropdown on hover for desktop */
+  .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Mobile dropdown */
+  .mobile-dropdown-menu {
+    display: none;
+    list-style: none;
+    padding-left: 20px;
+    text-align: center;
+  }
+  
+  .mobile-nav-item.dropdown.active .mobile-dropdown-menu {
+    display: block;
+  }
+  
