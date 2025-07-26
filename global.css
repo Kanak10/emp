@@ -47,6 +47,7 @@ button{
     border: 1px solid var(--secondary-color);
     transition: background-color 0.3s ease;
     font-size: 1rem;
+    border-radius: 8px;
 }
 button:hover {
     background-color: var(--hover-color);
