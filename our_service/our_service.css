@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 .hero-section{
     background: url('../assests/Images/herobackground.png') no-repeat center center/cover;
     height: 100vh;
@@ -51,6 +54,180 @@
     .our_service_details_container2 img{
         width: 100%;
     }
+}
+
+
+.service-categories {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 2% 5%;
+}
+
+
+
+.cards-container {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 2.5rem;
+  justify-content: center;
+}
+
+.service-card {
+  border: 1px solid #d1d1d6;
+  background-color: white;
+  min-width: 15rem;
+  overflow: hidden;
+  flex-grow: 1;
+  flex-shrink: 1;
+  width: 18.5rem;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card.tall {
+  min-height: 42.25rem;
+}
+
+.service-card img {
+  aspect-ratio: 1.39;
+  object-fit: cover;
+  width: 100%;
+  min-height: 16.625rem;
+  display: block;
+}
+
+.card-content {
+  /* width: 100%; */
+  flex: 1;
+  padding: 0.75rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text {
+  width: 100%;
+  flex: 1;
+}
+
+.card-text h3 {
+  color: rgba(28, 28, 30, 1);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.card-text p {
+  color: rgba(76, 76, 109, 1);
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.learn-more-btn {
+  display: flex;
+  width: 8.9375rem;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.125rem;
+  color: rgba(106, 41, 117, 1);
+  font-weight: 600;
+  justify-content: space-between;
+  margin-top: 2.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.learn-more-btn:hover {
+  opacity: 0.8;
+}
+
+.learn-more-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(106, 41, 117, 0.3);
+}
+
+.learn-more-btn span {
+  flex-shrink: 0;
+}
+
+.learn-more-btn img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  width: 2.125rem;
+  height: 2.125rem;
+  border-radius: 50px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .main {
+      padding: 2rem 1rem;
+  }
+
+  .testimonials-section{
+    margin: 100px;
+  }
+
+  .header {
+      max-width: 90%;
+  }
+
+  .header p {
+      font-size: 1.125rem;
+  }
+
+  .header h1 {
+      font-size: 1.375rem;
+  }
+
+  .cards-container {
+      gap: 1rem;
+      margin-top: 2rem;
+  }
+
+  .service-card {
+      width: 90%;
+  }
+
+  .card-content {
+      padding: 1rem;
+  }
+
+  .learn-more-btn {
+      margin-top: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main {
+      padding: 1.5rem 0.75rem;
+  }
+
+  .header p {
+      font-size: 1rem;
+  }
+
+  .header h1 {
+      font-size: 1.25rem;
+  }
+
+  .card-text h3 {
+      font-size: 1.125rem;
+  }
+
+  .card-text p {
+      font-size: 0.9375rem;
+  }
 }
 
 /* key features  */
