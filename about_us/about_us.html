@@ -103,8 +103,36 @@
         </div>
     </section>
 
-    <section class="more-testimonal">
-
+    <section class="testimonials-section">
+        <header class="testimonials-header">
+            <h1 class="testimonials-title">More Testimonials</h1>
+        </header>
+        
+        <div class="testimonials-container">
+            <img id="testimonial-bg" class="testimonial-background" alt="Testimonials background">
+            
+            <article class="testimonial-card">
+                <div class="testimonial-content">
+                    <header>
+                        <h3 id="customer-name" class="customer-name"></h3>
+                    </header>
+                    
+                    <div>
+                        <h4 id="company-name" class="company-name"></h4>
+                    </div>
+                    
+                    <blockquote>
+                        <p id="testimonial-text" class="testimonial-text"></p>
+                    </blockquote>
+                </div>
+            </article>
+            
+            <div class="quote-icon" role="img" aria-label="Quote decoration">
+                <div class="quote-symbol">"</div>
+            </div>
+            
+            <div class="indicator-dots" id="indicator-dots"></div>
+        </div>
     </section>
 
     <footer class="footer">
@@ -133,6 +161,7 @@
                     </nav>
                 </div>
             </div>
+
 
             <hr class="footer-divider" />
 
@@ -168,4 +197,344 @@
 
 </body>
 <script src="../app.js"></script>
+<script>
+     const testimonials = [
+            {
+                id: '1',
+                customerName: 'Sarah Johnson',
+                companyName: 'TechCorp Solutions',
+                testimonialText: 'The implementation was seamless and the support team exceeded our expectations. Our productivity increased by 40% in just the first month.',
+                backgroundImage: "../assests/Images/herobackground.png"
+            },
+            {
+                id: '2',
+                customerName: 'Michael Chen',
+                companyName: 'Innovation Labs',
+                testimonialText: 'Outstanding platform that transformed our workflow. The intuitive interface made adoption effortless across our entire organization.',
+                backgroundImage: '../assests/Images/herobackground.png'
+                       },
+            {
+                id: '3',
+                customerName: 'Emily Rodriguez',
+                companyName: 'Global Enterprises',
+                testimonialText: 'Exceptional service and remarkable results. We saved countless hours and significantly reduced operational costs within weeks.',
+                backgroundImage: '../assests/Images/herobackground.png'
+                        },
+            {
+                id: '4',
+                customerName: 'David Thompson',
+                companyName: 'Creative Studios',
+                testimonialText: 'Game-changing solution that streamlined our processes. The team collaboration features are absolutely phenomenal.',
+                backgroundImage: '../assets/Images/full-body-picture-smiling-business-woman-presenting-something-back-with-hand-holding-marker-isolated-white-wall-removebg-preview-2.png'
+            },
+            {
+                id: '5',
+                customerName: 'Lisa Wang',
+                companyName: 'Future Tech Inc',
+                testimonialText: 'Incredible platform with outstanding customer support. Implementation was smooth and results were immediate.',
+                backgroundImage: '../assests/Images/herobackground.png'
+            }
+        ];
+
+ 
+
+        let currentIndex = 0;
+        let autoSlideInterval;
+
+        // DOM elements
+        const testimonialBg = document.getElementById('testimonial-bg');
+        const customerNameEl = document.getElementById('customer-name');
+        const companyNameEl = document.getElementById('company-name');
+        const testimonialTextEl = document.getElementById('testimonial-text');
+        const indicatorDotsContainer = document.getElementById('indicator-dots');
+
+        // Initialize testimonials
+        function initTestimonials() {
+            // Create indicator dots
+            testimonials.forEach((_, index) => {
+                const dot = document.createElement('button');
+                dot.className = `dot ${index === 0 ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
+                dot.addEventListener('click', () => goToTestimonial(index));
+                indicatorDotsContainer.appendChild(dot);
+            });
+
+            // Display first testimonial
+            updateTestimonial();
+            
+            // Start auto-slide
+            startAutoSlide();
+        }
+
+        // Update testimonial display
+        function updateTestimonial() {
+            const current = testimonials[currentIndex];
+            
+            testimonialBg.src = current.backgroundImage;
+            customerNameEl.textContent = current.customerName;
+            companyNameEl.textContent = current.companyName;
+            testimonialTextEl.textContent = current.testimonialText;
+
+            // Update indicator dots
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Go to specific testimonial
+        function goToTestimonial(index) {
+            currentIndex = index;
+            updateTestimonial();
+            restartAutoSlide();
+        }
+
+        // Next testimonial
+        function nextTestimonial() {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            updateTestimonial();
+        }
+
+        // Start auto-slide
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextTestimonial, 5000);
+        }
+
+        // Restart auto-slide (when user interacts)
+        function restartAutoSlide() {
+            clearInterval(autoSlideInterval);
+            startAutoSlide();
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', initTestimonials);
+
+        // Pause auto-slide when user hovers over the section
+        const testimonialsSection = document.querySelector('.testimonials-section');
+        testimonialsSection.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+
+        testimonialsSection.addEventListener('mouseleave', () => {
+            startAutoSlide();
+        });
+</script>
+<style>
+      .testimonials-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            /* width: 100%; */
+            /* max-width: 1152px; */
+            margin: 0 5%;
+            padding: 40px 20px;
+        }
+
+        .testimonials-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .testimonials-title {
+            width: 100%;
+            color: #1C1C1E;
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 45.6px;
+        }
+
+        .testimonials-container {
+            width: 100%;
+            position: relative;
+            height: 640px;
+        }
+
+        .testimonial-background {
+            display: flex;
+            width: 100%;
+            height: 442px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            object-fit: cover;
+            border-radius: 25px;
+            left: 0;
+            top: 49px;
+            transition: opacity 0.5s ease;
+        }
+
+        .testimonial-card {
+            display: flex;
+            width: 573px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            height: 309px;
+            background-color: #FCEBFF;
+            padding: 40px 32px;
+            border-radius: 25px;
+            position: absolute;
+            right: 0;
+            top: 331px;
+            transition: all 0.5s ease;
+        }
+
+        .testimonial-content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .customer-name {
+            width: 100%;
+            color: #1C1C1E;
+            font-size: 24px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .company-name {
+            width: 100%;
+            color: #1C1C1E;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 28px;
+        }
+
+        .testimonial-text {
+            width: 100%;
+            color: #4C4C6D;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .quote-icon {
+            display: flex;
+            width: 103px;
+            height: 97px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            background-color: #6A2975;
+            padding: 8px;
+            border-radius: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .quote-symbol {
+            color: white;
+            font-size: 96px;
+            font-weight: 400;
+            line-height: 45.6px;
+            text-align: center;
+        }
+
+        .indicator-dots {
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 12px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.6);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .dot.active {
+            background-color: white;
+            border-color: white;
+            transform: scale(1.2);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .testimonials-title {
+                font-size: 28px;
+            }
+
+            
+
+            /* .testimonials-container {
+                height: auto;
+            } */
+
+            .testimonial-background {
+                /* position: relative; */
+                /* margin-bottom: 20px; */
+                /* top: 0; */
+            }
+
+            .testimonial-card {
+
+                width: 90%;
+                /* margin-top: 20px; */
+            }
+
+            .customer-name {
+                font-size: 22px;
+            }
+
+            .company-name {
+                font-size: 18px;
+            }
+
+            .testimonial-text {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-title {
+                font-size: 24px;
+            }
+
+            /* .testimonial-card {
+                right: 2.5%;
+                width: 95%;
+                padding: 20px 16px;
+            } */
+
+            .customer-name {
+                font-size: 20px;
+            }
+
+            .company-name {
+                font-size: 16px;
+            }
+
+            .testimonial-text {
+                font-size: 14px;
+            }
+
+            .quote-icon {
+                width: 80px;
+                height: 75px;
+            }
+
+            .quote-symbol {
+                font-size: 84px;
+            }
+        }
+</style>
 </html>
