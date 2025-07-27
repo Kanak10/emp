@@ -118,10 +118,12 @@
 
 .mobile-menu-toggle .close-icon {
     display: none;
+    color: black
 }
 
 .mobile-menu-toggle .hamburger-icon {
     display: block;
+    color: black
 }
 
 .mobile-menu-toggle.active .close-icon {
