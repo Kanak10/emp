@@ -23,6 +23,7 @@
 
 .hero-contain button {
     padding: 20px 0;
+    width: 200px;
 }
 
 .main-section {
@@ -155,6 +156,10 @@ a {
     
     p {
         font-size: 1rem;
+    }
+
+    .hero-section img{
+        height: 50vh;
     }
 
 

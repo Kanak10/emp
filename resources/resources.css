@@ -203,6 +203,10 @@ input[type="checkbox"] {
     .hero-section-details {
         margin-bottom: 80px;
     }
+
+    .hero-section img{
+        height: 50vh;
+    }
     
     .hero-section p {
         margin-top: 10px;

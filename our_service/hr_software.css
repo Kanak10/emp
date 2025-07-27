@@ -22,6 +22,7 @@
 }
 
 .hero-contain button {
+    width: 200px;
     padding: 20px 0;
 }
 
@@ -229,10 +230,6 @@ a {
     .main-hr-details,
     .engage-contant {
         gap: 20px;
-    }
-
-    .main-hr-details button {
-        width: 100%;
     }
 
     .engage-details p {
