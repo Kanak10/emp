@@ -209,3 +209,7 @@ a {
       font-size: 1rem;
   }
 }
+
+.service-grid-element-content ul{
+  padding-left: 20px;
+}
