@@ -117,8 +117,8 @@
         <div class="testimonials-container">
             <img id="testimonial-bg" class="testimonial-background" alt="Testimonials background">
             <div class="testimonials-arrows">
-                <img src="../about_us/about_us_assets/left_arrow.png" alt="">
-                <img src="../about_us/about_us_assets/right_arrow.png" alt="">
+                <img src="../about_us/about_us_assets/left_arrow.png" alt="" id="left-arrow" class="arrow-btn">
+                <img src="../about_us/about_us_assets/right_arrow.png" alt="" id="right-arrow" class="arrow-btn">
             </div>
             <article class="testimonial-card">
                 <div class="testimonial-content">
@@ -256,16 +256,23 @@
         const companyNameEl = document.getElementById('company-name');
         const testimonialTextEl = document.getElementById('testimonial-text');
         const indicatorDotsContainer = document.getElementById('indicator-dots');
+        const leftArrow = document.getElementById('left-arrow');
+        const rightArrow = document.getElementById('right-arrow');
 
         // Initialize testimonials
         function initTestimonials() {
             // Create indicator dots
-            testimonials.forEach((_, index) => {
-                const dot = document.createElement('button');
-                dot.className = `dot ${index === 0 ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Go to testimonial ${index + 1}`);
-                dot.addEventListener('click', () => goToTestimonial(index));
-                indicatorDotsContainer.appendChild(dot);
+
+
+            // Add arrow click event listeners
+            leftArrow.addEventListener('click', () => {
+                previousTestimonial();
+                restartAutoSlide();
+            });
+
+            rightArrow.addEventListener('click', () => {
+                nextTestimonial();
+                restartAutoSlide();
             });
 
             // Display first testimonial
@@ -296,6 +303,12 @@
             currentIndex = index;
             updateTestimonial();
             restartAutoSlide();
+        }
+
+        // Previous testimonial
+        function previousTestimonial() {
+            currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
         }
 
         // Next testimonial
@@ -491,6 +504,16 @@
         .testimonials-arrows img {
             width: 5%;
             text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .arrow-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .arrow-btn:active {
+            transform: scale(0.95);
         }
 
         /* Mobile Responsive */
