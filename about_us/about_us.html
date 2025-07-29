@@ -88,16 +88,11 @@
             <p>We're proud to share testimonials from our satisfied clients</p>
             <a href="#">Contact Us</a>
         </div>
-        <div class="hero-section-image-outer-container">
-            <div class="hero-section-bg-image">
-                <img src="/about_us_assets/hero_section-background.png" alt="">
-            </div>
-            <div class="hero-section-image-container">
-                <img src="./about_us_assets/hero_image_1.png" alt="">
-                <img src="./about_us_assets/hero_image_2.png" alt="">
-                <img src="./about_us_assets/hero_image_3.png" alt="">
-                <img src="./about_us_assets/hero_image_4.png" alt="">
-            </div>
+        <div class="hero-section-image-container">
+            <img src="./about_us_assets/hero_image_1.png" alt="">
+            <img src="./about_us_assets/hero_image_2.png" alt="">
+            <img src="./about_us_assets/hero_image_3.png" alt="">
+            <img src="./about_us_assets/hero_image_4.png" alt="">
         </div>
         <a href="#" class="hero-section-cta-button">Contact Us</a>
     </section>
@@ -105,10 +100,7 @@
     <section class="video-testimonial">
         <h3>Video Testimonial</h3>
         <div class="video-testimonial-detail-div">
-            <!-- <div class="video-testimonial-image-div"> -->
-                <!-- <img src="./about_us_assets/video_testimonal_image_bg.png" alt="" class="video-testimonial-image-bg"> -->
-                <img src="./about_us_assets/video_testimonal.png" alt="" class="video-testimonial-image">
-            <!-- </div> -->
+            <img src="./about_us_assets/video_testimonal.png" alt="" class="video-testimonial-image">
             <div class="video-testimonial-sub-details">
                 <img src="./about_us_assets/profile_icon.png" alt="" >
                 <h4>Daniella Baker</h4>
@@ -124,7 +116,10 @@
         
         <div class="testimonials-container">
             <img id="testimonial-bg" class="testimonial-background" alt="Testimonials background">
-            
+            <div class="testimonials-arrows">
+                <img src="../about_us/about_us_assets/left_arrow.png" alt="">
+                <img src="../about_us/about_us_assets/right_arrow.png" alt="">
+            </div>
             <article class="testimonial-card">
                 <div class="testimonial-content">
                     <header>
@@ -142,7 +137,7 @@
             </article>
             
             <div class="quote-icon" role="img" aria-label="Quote decoration">
-                <div class="quote-symbol">"</div>
+                <img src="../assests/All icons/quote.png" alt="">
             </div>
             
             <div class="indicator-dots" id="indicator-dots"></div>
@@ -156,9 +151,9 @@
                     <h3>Company</h3>
                     <nav>
                         <ul>
-                            <li><a href="#about">About Us</a></li>
+                            <li><a href="about_us.html">About Us</a></li>
                             <li><a href="#news">News</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="../contact_us/contact_us.html">Contact Us</a></li>
                             <li><a href="#services">Services</a></li>
                             <li><a href="#disclaimer">Disclaimer</a></li>
                             <li><a href="#privacy">Privacy Policy</a></li>
@@ -341,7 +336,7 @@
             gap: 40px;
             /* width: 100%; */
             /* max-width: 1152px; */
-            margin: 0 5%;
+            margin: 0 3%;
             padding: 40px 20px;
         }
 
@@ -379,6 +374,7 @@
             border-radius: 25px;
             left: 0;
             top: 49px;
+            padding: 0 2%;
             transition: opacity 0.5s ease;
         }
 
@@ -394,7 +390,7 @@
             padding: 40px 32px;
             border-radius: 25px;
             position: absolute;
-            right: 0;
+            right: 50px;
             top: 331px;
             transition: all 0.5s ease;
         }
@@ -443,7 +439,6 @@
             padding: 8px;
             border-radius: 100px;
             position: absolute;
-            left: 0;
             top: 0;
         }
 
@@ -481,17 +476,28 @@
             transform: scale(1.2);
         }
 
+        .testimonials-arrows {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            align-self: center;
+            z-index: 100;
+            width: 100%;
+            top: 30%;
+        }
+
+        .testimonials-arrows img {
+            width: 5%;
+            text-align: center;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .testimonials-title {
                 font-size: 28px;
             }
-
-            
-
-            /* .testimonials-container {
-                height: auto;
-            } */
 
             .testimonial-background {
                 /* position: relative; */
@@ -500,7 +506,6 @@
             }
 
             .testimonial-card {
-
                 width: 90%;
                 /* margin-top: 20px; */
             }
@@ -515,6 +520,32 @@
 
             .testimonial-text {
                 font-size: 16px;
+            }
+
+            .testimonial-right-arrow {
+                width: 10%;
+                position: relative;
+                left: -25px;
+            }
+
+            .testimonial-left-arrow {
+                width: 10%;
+                position: relative;
+                right: -25px;
+            }
+
+            .quote-icon {
+                width: 80px;
+                height: 75px;
+                top: 30px;
+            }
+
+            .testimonials-arrows img {
+                width: 15%;
+            }
+            .testimonial-card {
+                right: 25px;
+                /* top: 400px; */
             }
         }
 
@@ -542,12 +573,22 @@
             }
 
             .quote-icon {
-                width: 80px;
-                height: 75px;
+                width: 60px;
+                height: 55px;
+                top: 30px;
             }
 
             .quote-symbol {
                 font-size: 84px;
+            }
+
+            .testimonials-arrows img {
+                width: 10%;
+            }
+
+            .testimonial-card {
+                right: 15px;
+                /* top: 400px; */
             }
         }
 </style>

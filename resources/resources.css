@@ -114,6 +114,14 @@ input[type="radio"] {
     color: var(--text-secondary-color);
 }
 
+.resource-heading a {
+    color: var(--primary-color);
+}
+
+.resource-heading a:hover {
+    color: var(--hover-color);
+}
+
 .resource-grid-view {
     padding: 40px 0;
     display: grid;
@@ -124,23 +132,33 @@ input[type="radio"] {
 }
 
 .resource-checkbox-container {
+    display: flex;
+    align-items: flex-start; /* checkbox stays at top, text lines up right */
+    gap: 10px;
     border: 2px solid #eee;
     padding: 15px;
 }
 
-.resource-checkbox-container  label {
+.resource-checkbox-container label {
     padding-left: 5px;
 }
 
 .resource-checkbox-container p {
-    padding: 10px 20px 0px;
+    padding-top: 10px;
+    font-size: medium;
     color: var(--text-secondary-color);   
 }
 
+.resource-grid-label-div {
+    display: flex;
+    flex-direction: column;
+}
+
 input[type="checkbox"] {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
+    display: inline;
     accent-color: var(--primary-color);
 }
 
@@ -322,13 +340,14 @@ input[type="checkbox"] {
     }
     
     .resource-checkbox-container p {
-        padding: 5px 15px 0px;
+        padding-top: 5px;
+        font-size: small;
         color: var(--text-secondary-color);   
     }
     
     input[type="checkbox"] {
-        width: 10px;
-        height: 10px;
+        width: 15px;
+        height: 15px;
         cursor: pointer;
         accent-color: var(--primary-color);
     }

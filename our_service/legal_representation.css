@@ -48,8 +48,8 @@
     flex-direction: column;
     gap: 24px;
     padding: 12px;
-    border: 2px solid rgb(238, 233, 233);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(238, 233, 233);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .main-detail p {
@@ -57,7 +57,7 @@
 }
 
 .main-detail img {
-    width: 10%;
+    width: 5%;
 }
 
 .service-section {
@@ -105,7 +105,7 @@
     color: var(--text-secondary-color);
 }
 
-a {
+.service-grid-element a {
     text-decoration: none;
     color: var(--primary-color);
     font-size: 16px;
